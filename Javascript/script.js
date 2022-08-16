@@ -23,4 +23,4 @@ function showQuote(){
 
 /* Adding an event listener to the dice element, so when the dice is clicked, the showQuote function is
 called. */
-dice.addEventListener("click", function(){showQuote();});
+dice.addEventListener("click", showQuote);
