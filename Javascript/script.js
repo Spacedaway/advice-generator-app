@@ -8,17 +8,18 @@ const adviceQuote = document.querySelector("#Advice-Quote");
  * the advice slip, then gets the id and advice, then displays the id and advice in the HTML, then
  * catches any errors.
  */
-function showQuote(){
-    fetch("https://api.adviceslip.com/advice")
-    .then(response => response.json())
-    .then((data) => data.slip)
-    .then((data) => {
-        adviceNum.textContent = "#" + data.id;
-        adviceQuote.textContent = '"' + data.advice + '"';
-    })
-    .catch((error) => {
-        alert(`Error ${error}`);
-    });
+async function showQuote() {
+    const response = await fetch("https://api.adviceslip.com/advice")
+        .then((response) => response.json())
+        .then((data) => data.slip)
+        .then((data) => {
+            adviceNum.textContent = "#" + data.id;
+            adviceQuote.textContent = '"' + data.advice + '"';
+        })
+        .catch((error) => {
+            alert(`Error ${error}`);
+        });
+    return response;
 }
 
 /* Adding an event listener to the dice element, so when the dice is clicked, the showQuote function is
