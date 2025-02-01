@@ -14,7 +14,7 @@ body {
 
 .container {
     background-color: hsl(217, 19%, 24%);
-    margin: 10em auto;
+    margin: 10rem auto;
     height: auto;
     width: 350px;
     border: solid;
